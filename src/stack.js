@@ -7,7 +7,7 @@ exports.push = function (x) {
     stack.push(x);
 };
 
-// Returnerar det översta elementet i stacken oh tar bort det 
+// Returnerar det översta elementet i stacken och tar bort det 
 exports.pop = function () {
     return stack.pop();
 }
@@ -16,3 +16,8 @@ exports.pop = function () {
 exports.peek = function () {
     return _.last(stack);
 }
+
+// Kontrollerar om stack är tom 
+exports.isEmpty = function () {
+    return stack.length === 0;
+};
