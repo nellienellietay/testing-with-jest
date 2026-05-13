@@ -18,3 +18,10 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBe(42);
 });
 
+test('isEmpty shpuld tell if the stack is empty', () => {
+    expect(stack.isEmpty()).toBe(true);
+
+    stack.push("labb");
+
+    expect(stack.isEmpty()).toBe(false);
+})
