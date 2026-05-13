@@ -34,3 +34,26 @@ describe('Clicking "Pusha till stacken"', () => {
         await alert.accept();
     });
 });
+
+test('after popping, the previous value should be shown', async () => {
+    let push = await driver.findElement(By.id('push'));
+
+    await push.click();
+    let alert = await driver.switchTo().alert();
+    await alert.sendKeys("labb");
+    await alert.accept();
+
+    await push.click();
+    alert = await driver.switchTo().alert();
+    await alert.sendKeys("tenta");
+    await alert.accept();
+
+    await driver.findElement(By.id('pop')).click();
+
+    alert = await driver.switchTo().alert();
+    await alert.accept();
+
+    expect(
+        await driver.findElement(By.id('top_of_stack')).getText()
+    ).toBe("labb")
+});
