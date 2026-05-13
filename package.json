@@ -12,7 +12,6 @@
   },
   "license": "MIT",
   "author": "Nellie Taylor",
-  "type": "commonjs",
   "main": "src/index.js",
   "directories": {
     "test": "tests"
@@ -21,10 +20,13 @@
     "test": "jest tests"
   },
   "dependencies": {
+    "geckodriver": "^6.1.0",
+    "selenium-webdriver": "^4.44.0",
     "underscore": "^1.13.8"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^14.0.0",
+    "jest": "^30.4.2",
     "webpack-cli": "^7.0.2",
     "wepack": "^0.0.1"
   }
